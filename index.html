@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>TecoMarket World Cup 2026</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", Arial;
+}
+
+body{
+background:#041f19;
+color:white;
+overflow-x:hidden;
+}
+
+/* FONDOS CIRCULARES */
+
+.circle{
+position:absolute;
+border-radius:50%;
+filter:blur(2px);
+opacity:0.25;
+}
+
+.c1{
+width:400px;
+height:400px;
+background:#ff3b3b;
+top:50px;
+right:-150px;
+}
+
+.c2{
+width:350px;
+height:350px;
+background:#ffd23f;
+top:400px;
+left:150px;
+}
+
+.c3{
+width:250px;
+height:250px;
+background:#1ec97f;
+top:150px;
+left:-100px;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:120px 20px 60px 20px;
+position:relative;
+z-index:2;
+}
+
+.badge{
+display:inline-block;
+background:#7b1d24;
+padding:8px 18px;
+border-radius:20px;
+font-size:14px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:70px;
+color:#f3c430;
+letter-spacing:2px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+color:#d8d8d8;
+line-height:1.6;
+}
+
+.date{
+margin-top:30px;
+display:inline-block;
+background:#0c7a4e;
+padding:14px 28px;
+border-radius:30px;
+font-weight:bold;
+font-size:16px;
+}
+
+/* VIDEO */
+
+.video-container{
+margin:80px auto;
+max-width:900px;
+border:3px solid #f3c430;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+video{
+width:100%;
+display:block;
+}
+
+/* SECCIONES */
+
+.section{
+max-width:900px;
+margin:80px auto;
+padding:45px;
+border-radius:20px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+}
+
+.section h2{
+font-size:36px;
+color:#f3c430;
+margin-bottom:20px;
+}
+
+.section p{
+font-size:18px;
+line-height:1.7;
+color:#d9d9d9;
+}
+
+/* TAGS */
+
+.tags{
+margin-top:25px;
+}
+
+.tag{
+display:inline-block;
+padding:10px 18px;
+border-radius:25px;
+margin:6px;
+font-size:14px;
+}
+
+.red{background:#a1222c;}
+.yellow{background:#d6a41d;}
+.green{background:#139c63;}
+.dark{background:#7b1d24;}
+
+/* ANIMACIÓN SCROLL */
+
+.section{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
+<div class="hero">
+
+<div class="badge">🌎 UAG HIGHSCHOOL · 6TO SEMESTRE</div>
+
+<h1>TECOMARKET<br>WORLD CUP 2026</h1>
+
+<p>
+El evento más esperado del año en la UAG Highschool donde todo 6to semestre pone a prueba sus habilidades en el proceso del marketing, y toda la gente disfruta de una gran variedad de productos y comidas deliciosas. Ven y disfruta el Tecomarket 2026.
+</p>
+
+<div class="date">📅 23 de Abril · UAG Highschool</div>
+
+</div>
+
+<!-- VIDEO -->
+
+<div class="video-container">
+
+<iframe 
+width="100%" 
+height="500"
+src="https://www.youtube.com/embed/eRiqs1GVPj8?rel=0"
+title="TecoMarket 2026"
+frameborder="0"
+referrerpolicy="strict-origin-when-cross-origin"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+    
+<!-- SECCIÓN EVENTO -->
+
+<div class="section">
+
+<h2>Disfruta el Tecomarket este 23 de abril</h2>
+
+<p>
+Esta vez edición <b>Copa Mundial 2026</b> — vive este ambiente de fútbol, pasión y gozo, rodeado de riquísima comida de diferentes países. Con un nuevo servicio para llevar y completo compromiso con el cliente.
+</p>
+
+<div class="tags">
+<span class="tag red">⚽ Ambiente mundialero</span>
+<span class="tag yellow">🍔 Comida internacional</span>
+<span class="tag green">🥡 Servicio para llevar</span>
+<span class="tag dark">📍 UAG Highschool</span>
+</div>
+
+</div>
+
+<!-- SECCIÓN QUE ES -->
+
+<div class="section">
+
+<h2>¿Qué es el Tecomarket?</h2>
+
+<p>
+El Tecomarket es el evento más esperado del año en la UAG Highschool, donde todo el 6to semestre pone a prueba sus habilidades en el proceso del marketing. Y toda la gente disfruta de una gran variedad de productos y comidas deliciosas. ¡Ven y disfruta el Tecomarket 2026!
+</p>
+
+</div>
+
+<script>
+
+/* animación al hacer scroll */
+
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+
+sections.forEach(sec => {
+
+const top = sec.getBoundingClientRect().top;
+const trigger = window.innerHeight - 100;
+
+if(top < trigger){
+sec.classList.add("show");
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
