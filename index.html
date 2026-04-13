@@ -14,10 +14,13 @@ font-family: "Segoe UI", Arial;
 }
 
 body{
-background:#041f19;
+margin:0;
+font-family: "Segoe UI", Arial;
 color:white;
 overflow-x:hidden;
+background:none;
 }
+   
 
 /* FONDOS CIRCULARES */
 
@@ -166,11 +169,178 @@ transition:all 0.8s ease;
 opacity:1;
 transform:translateY(0);
 }
+    
+#contador{
+margin-top:25px;
+font-size:28px;
+font-weight:bold;
+color:#f3c430;
+}
 
+    .ball{
+position:fixed;
+bottom:20px;
+left:20px;
+font-size:40px;
+animation:flotar 6s infinite ease-in-out;
+}
+
+.ball2{
+position:fixed;
+top:200px;
+right:30px;
+font-size:35px;
+animation:flotar 8s infinite ease-in-out;
+}
+
+@keyframes flotar{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+
+}
+
+/* FONDO ESTADIO */
+
+.stadium-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+180deg,
+#041f19 0%,
+#063d2f 40%,
+#0c7a4e 100%
+);
+z-index:-1;
+overflow:hidden;
+}
+
+/* líneas del campo */
+
+.stadium-bg::before{
+
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background-image:
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.05) 0px,
+rgba(255,255,255,0.05) 2px,
+transparent 2px,
+transparent 80px
+);
+
+animation:campoMover 25s linear infinite;
+
+}
+
+/* animación */
+
+@keyframes campoMover{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-200px);
+}
+
+}
+
+    /* LUCES DE ESTADIO */
+
+.stadium-lights{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:150px;
+display:flex;
+justify-content:space-around;
+pointer-events:none;
+z-index:1;
+}
+
+.light{
+width:120px;
+height:120px;
+background:radial-gradient(circle,
+rgba(255,255,200,0.9) 0%,
+rgba(255,255,150,0.6) 30%,
+rgba(255,255,120,0.2) 60%,
+transparent 80%
+);
+border-radius:50%;
+filter:blur(8px);
+animation:parpadeo 3s infinite alternate;
+}
+
+.light:nth-child(2){animation-delay:0.5s;}
+.light:nth-child(3){animation-delay:1s;}
+.light:nth-child(4){animation-delay:1.5s;}
+.light:nth-child(5){animation-delay:2s;}
+
+@keyframes parpadeo{
+
+0%{
+opacity:0.6;
+transform:scale(1);
+}
+
+100%{
+opacity:1;
+transform:scale(1.15);
+}
+
+}
+ /* BOTONES DE REGIONES */
+
+.menu-regiones{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:40px 0;
+}
+
+.btn-region{
+text-decoration:none;
+color:white;
+background:linear-gradient(45deg,#0c7a4e,#0f9d58);
+padding:15px 25px;
+border-radius:12px;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+.btn-region:hover{
+transform:scale(1.1);
+background:linear-gradient(45deg,#f3c430,#ffd700);
+color:black;
+}
+    
 </style>
 </head>
 
 <body>
+    <div class="stadium-bg"></div>
+    <div class="stadium-lights">
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+</div>
+<div class="ball">⚽</div>
+<div class="ball2">⚽</div>
 
 <div class="circle c1"></div>
 <div class="circle c2"></div>
@@ -180,13 +350,14 @@ transform:translateY(0);
 
 <div class="badge">🌎 UAG HIGHSCHOOL · 6TO SEMESTRE</div>
 
-<h1>TECOMARKET<br>WORLD CUP 2026</h1>
+<h1>TECOMARKET HIGHSCHOOL<br>EDICIÓN WORLD CUP 2026</h1>
 
 <p>
 El evento más esperado del año en la UAG Highschool donde todo 6to semestre pone a prueba sus habilidades en el proceso del marketing, y toda la gente disfruta de una gran variedad de productos y comidas deliciosas. Ven y disfruta el Tecomarket 2026.
 </p>
 
 <div class="date">📅 23 de Abril · UAG Highschool</div>
+    <div id="contador"></div>
 
 </div>
 
@@ -209,9 +380,18 @@ allowfullscreen>
     
 <!-- SECCIÓN EVENTO -->
 
+<div class="menu-regiones">
+
+<a href="europa.html" class="btn-region">🌍 Europa</a>
+<a href="asia.html" class="btn-region">🌏 Asia</a>
+<a href="mexico.html" class="btn-region">🌎 México</a>
+<a href="america.html" class="btn-region">🌎 América</a>
+
+</div>
+    
 <div class="section">
 
-<h2>Disfruta el Tecomarket este 23 de abril</h2>
+<h2>Disfruta Tecomarket este 23 de abril</h2>
 
 <p>
 Esta vez edición <b>Copa Mundial 2026</b> — vive este ambiente de fútbol, pasión y gozo, rodeado de riquísima comida de diferentes países. Con un nuevo servicio para llevar y completo compromiso con el cliente.
@@ -230,10 +410,10 @@ Esta vez edición <b>Copa Mundial 2026</b> — vive este ambiente de fútbol, pa
 
 <div class="section">
 
-<h2>¿Qué es el Tecomarket?</h2>
+<h2>¿Qué es Tecomarket?</h2>
 
 <p>
-El Tecomarket es el evento más esperado del año en la UAG Highschool, donde todo el 6to semestre pone a prueba sus habilidades en el proceso del marketing. Y toda la gente disfruta de una gran variedad de productos y comidas deliciosas. ¡Ven y disfruta el Tecomarket 2026!
+Tecomarket es el evento más esperado del año en la UAG Highschool, donde todo el 6to semestre pone a prueba sus habilidades en el proceso del marketing. Y toda la gente disfruta de una gran variedad de productos y comidas deliciosas. ¡Ven y disfruta Tecomarket Highschool edición World Cup 2026!
 </p>
 
 </div>
@@ -258,6 +438,26 @@ sec.classList.add("show");
 });
 
 });
+
+</script>
+    <script>
+
+const fechaEvento = new Date("April 23, 2026 00:00:00").getTime();
+
+const contador = setInterval(function(){
+
+const ahora = new Date().getTime();
+const distancia = fechaEvento - ahora;
+
+const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+document.getElementById("contador").innerHTML =
+"⏳ Faltan " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s";
+
+},1000);
 
 </script>
 
