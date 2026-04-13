@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <title>TecoMarket World Cup 2026</title>
 
@@ -319,6 +320,69 @@ transform:scale(1.03);
     .img-infografia:hover{
 transform:scale(1.05);
 filter:brightness(1.1);
+}
+    
+    /* 🔹 Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🔹 Evita espacio lateral raro */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 🔹 Ajuste general del body */
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* 🔹 Contenedor principal */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+}
+
+/* 🔹 Imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔹 Botones (para que no se desacomoden) */
+button, .btn {
+  width: 100%;
+  max-width: 200px;
+}
+
+
+
+/* 🔹 Ajustes SOLO para celular */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
 }
 </style>
      </head>
