@@ -21,7 +21,7 @@ color:white;
 overflow-x:hidden;
 background:none;
 }
-
+   
 
 /* FONDOS CIRCULARES */
 
@@ -79,7 +79,6 @@ font-size:70px;
 color:#f3c430;
 letter-spacing:2px;
 margin-bottom:20px;
-line-height: 1.1;
 }
 
 .hero p{
@@ -302,35 +301,28 @@ transform:scale(1.15);
 }
 
 }
- /* BOTONES DE REGIONES */
 
-.menu-regiones{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin:40px 0;
-}
-
-.btn-region{
-text-decoration:none;
-color:white;
-background:linear-gradient(45deg,#0c7a4e,#0f9d58);
-padding:15px 25px;
-border-radius:12px;
-font-weight:bold;
+.img-infografia{
+width:100%;
+max-width:900px;
+height:auto;
+display:block;
+margin:auto;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 transition:0.3s;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
-.btn-region:hover{
-transform:scale(1.1);
-background:linear-gradient(45deg,#f3c430,#ffd700);
-color:black;
+.img-infografia:hover{
+transform:scale(1.03);
 }
- 
-        
-/* 🔹 Reset general */
+    
+    .img-infografia:hover{
+transform:scale(1.05);
+filter:brightness(1.1);
+}
+    
+    /* 🔹 Reset general */
 * {
   margin: 0;
   padding: 0;
@@ -392,8 +384,8 @@ button, .btn {
   }
 
 }
-
-    /* 🔥 FIX FINAL PARA CELULAR */
+    
+/* 🔥 FIX FINAL PARA CELULAR */
 @media (max-width: 768px){
 
   /* Oculta elementos que rompen el layout */
@@ -437,9 +429,10 @@ button, .btn {
 
 }
 </style>
-</head>
+     </head>
 
 <body>
+   
     <div class="stadium-bg"></div>
     <div class="stadium-lights">
   <div class="light"></div>
@@ -459,76 +452,21 @@ button, .btn {
 
 <div class="badge">🌎 UAG HIGHSCHOOL · 6TO SEMESTRE</div>
 
-<h1>TECOMARKET HIGHSCHOOL<br>EDICIÓN WORLD CUP 2026</h1>
-
-<p>
-El evento más esperado del año en la UAG Highschool donde todo 6to semestre pone a prueba sus habilidades en el proceso del marketing, y toda la gente disfruta de una gran variedad de productos y comidas deliciosas. Ven y disfruta el Tecomarket 2026.
-</p>
-
-<div class="date">📅 23 de Abril · UAG Highschool</div>
+<h1>FLORES<br>TECOMARKET 2026</h1>
+    
+    <div class="date">📅 23 de Abril · UAG Highschool</div>
     <div id="contador"></div>
 
 </div>
+    
+    <div class="section">
+<h2>Hermosa variedad de flores</h2>
 
-<!-- VIDEO -->
-
-<div class="video-container">
-
-<iframe 
-width="100%" 
-height="500"
-src="https://www.youtube.com/embed/eRiqs1GVPj8?rel=0"
-title="TecoMarket 2026"
-frameborder="0"
-referrerpolicy="strict-origin-when-cross-origin"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
+<img src="flores.png.jpeg"  class="img-infografia" style="width:100%;">
+    
 </div>
     
-<!-- SECCIÓN EVENTO -->
-
-<div class="menu-regiones">
-
-<a href="europa.html" class="btn-region">🌍 Europa</a>
-<a href="asia.html" class="btn-region">🌏 Asia</a>
-<a href="mexico.html" class="btn-region">🌎 México</a>
-<a href="america.html" class="btn-region">🌎 América</a>
-<a href="flores.html" class="btn-region">🌼 Flores UAG</a>
-
-</div>
-    
-<div class="section">
-
-<h2>Disfruta Tecomarket este 23 de abril</h2>
-
-<p>
-Esta vez edición <b>Copa Mundial 2026</b> — vive este ambiente de fútbol, pasión y gozo, rodeado de riquísima comida de diferentes países. Con un nuevo servicio para llevar y completo compromiso con el cliente.
-</p>
-
-<div class="tags">
-<span class="tag red">⚽ Ambiente mundialero</span>
-<span class="tag yellow">🍔 Comida internacional</span>
-<span class="tag green">🥡 Servicio para llevar</span>
-<span class="tag dark">📍 UAG Highschool</span>
-</div>
-
-</div>
-
-<!-- SECCIÓN QUE ES -->
-
-<div class="section">
-
-<h2>¿Qué es Tecomarket?</h2>
-
-<p>
-Tecomarket es el evento más esperado del año en la UAG Highschool, donde todo el 6to semestre pone a prueba sus habilidades en el proceso del marketing, ademas, de apoyar solidariamente a un albergue infantil (ALCAJYM) con la donación de un porcentaje de sus ganancias. Aquí toda la gente disfruta de una gran variedad de productos y comidas deliciosas, asi como una experiencia inmersiva ¡¡increible!!. ¡Ven y disfruta Tecomarket Highschool edición World Cup 2026!
-</p>
-
-</div>
-
-<script>
+    <script>
 
 /* animación al hacer scroll */
 
@@ -570,6 +508,5 @@ document.getElementById("contador").innerHTML =
 },1000);
 
 </script>
-
 </body>
 </html>
